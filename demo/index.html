@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>LittleSlideshow Demo</title>
+	
+		<meta charset="utf-8">
+
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		
+		<!-- LittleSlideshow -->
+		<script type="text/javascript" src="../dist/littleslideshow.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="../dist/littleslideshow.min.css">
+		
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				var images = 
+					[
+						{
+							src: 'images/image1.jpg',
+							alt: 'First image'
+						},
+						{
+							src: 'images/image2.jpg',
+							alt: 'Second image'
+						},
+						{
+							src: 'images/image3.jpg',
+							alt: 'Third image'
+						},
+						{
+							src: 'images/image4.jpg',
+							alt: 'Fourth image'
+						},
+						{
+							src: 'images/image5.jpg',
+							alt: 'Fifth image'
+						},
+						{
+							src: 'images/image6.jpg',
+							alt: 'Sixth image'
+						},
+						{
+							src: 'images/image7.jpg',
+							alt: 'Seventh image'
+						},
+						{
+							src: 'images/image8.jpg',
+							alt: 'Eighth image'
+						},
+						{
+							src: 'images/image9.jpg',
+							alt: 'Ninth image'
+						},
+						{
+							src: 'images/image10.jpg',
+							alt: 'Tenth image'
+						},
+						{
+							src: 'images/image11.jpg',
+							alt: 'Eleventh image'
+						},
+						{
+							src: 'images/image12.jpg',
+							alt: 'Twelfth image'
+						},
+						{
+							src: 'images/image13.jpg',
+							alt: 'Thirteenth image'
+						},
+						{
+							src: 'images/image14.jpg',
+							alt: 'Fourteenth image'
+						},
+					];
+					
+				var options =
+					{
+						maxHeight: 400,
+						maxThumbnailHeight: 50
+					};
+			
+				$('#slideshow').LittleSlideshow(images, options);
+			});
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<h1>LittleSlideshow Demo</h1>
+				</div>
+			</div>
+		</div>
+	
+		<div id="slideshow"></div>
+	</body>
+</html>
