@@ -1,5 +1,5 @@
 /**
- * @file LittleSlideshow v0.1
+ * @file LittleSlideshow v0.2
  * @author Little Apps (https://www.little-apps.com)
  * @license MIT License
  * @see {@link https://github.com/little-apps/LittleSlideshow|GitHub Project}
@@ -139,18 +139,22 @@
 					});
 				}
 				
-				fullsizeListItem.data('leftOffset', priv.currentOffset);
+				priv.imagesLoaded--;
 				
-				// If first img -> select it + start timer (if needed)
-				if (priv.currentOffset == 0) {
-					priv.select(fullsizeListItem);
-					
-					// Set highlighted index to 1 (since we're at 0 already)
-					priv.highlightedIndex = 0;
-					pub.setupTimer();
+				if (priv.imagesLoaded <= 0) {
+					$.event.trigger({
+						type: "slideshowImagesLoaded"
+					});
 				}
+			}).on('error', function() {
+				// Error loading image (could be invalid URL)
+				priv.imagesLoaded--;
 				
-				priv.currentOffset += $(this).innerWidth();
+				if (priv.imagesLoaded <= 0) {
+					$.event.trigger({
+						type: "slideshowImagesLoaded"
+					});
+				}
 			});
 			
 			$(thumbImg).on('load', function() {
@@ -239,7 +243,31 @@
 			insertEl = $(priv.element).after(priv.container);
 		}
 		
-		priv.currentOffset = 0;
+		$(document).on('slideshowImagesLoaded', function(e) {
+			// Calculate offsets once all images are loaded.
+			var listItems = $('li', priv.fullSizeList);
+			
+			priv.currentOffset = 0;
+			
+			for (var i = 0; i < listItems.length; i++) {
+				var listItem = $(listItems[i]);
+				
+				listItem.data('leftOffset', priv.currentOffset);
+				
+				// If first img -> select it + start timer (if needed)
+				if (i == 0) {
+					priv.select(listItem);
+					
+					// Set highlighted index to 1 (since we're at 0 already)
+					priv.highlightedIndex = 0;
+					pub.setupTimer();
+				}
+				
+				priv.currentOffset += listItem.width();
+			}
+		});
+		
+		priv.imagesLoaded = priv.images.length;
 		
 		for (var i = 0; i < priv.images.length; i++) {
 			priv.addItem(priv.images[i], i);
