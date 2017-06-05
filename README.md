@@ -1,6 +1,8 @@
 # Little Slideshow
 Little Slideshow is a simple slideshow developed in jQuery and works with Bootstrap.
 
+![LittleSlideshow Screenshot](http://i.imgur.com/ROXq28X.png)
+
 ## License ##
 Little Slideshow is licensed under the MIT License. 
 
