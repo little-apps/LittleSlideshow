@@ -235,13 +235,7 @@
 		
 		priv.element = (element instanceof $) ? element : $(element);
 		
-		var insertEl;
-		
-		if (!priv.args.insertAfter) {
-			insertEl = $(priv.element).append(priv.container);
-		} else {
-			insertEl = $(priv.element).after(priv.container);
-		}
+		var insertEl = (!priv.args.insertAfter) ? $(priv.element).append(priv.container) : $(priv.element).after(priv.container);
 		
 		$(document).on('slideshowImagesLoaded', function(e) {
 			// Calculate offsets once all images are loaded.
