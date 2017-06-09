@@ -96,12 +96,12 @@ Options are a JSON object with the following properties:
 
     {
         maxWidth:           0,      // The maximum width of each image. If zero, the original image widths are used.
-    	maxHeight:          0,      // The maximum height of each image. If zero, the original image heights are used.
-    	insertAfter:        false,  // Inserts slideshow after selected image (rather than inside) if true.
-    	thumbnailWidth:     50,     // Width of thumbnails.
-    	thumbnailHeight:    50,     // Height of thumbnails.
-    	maxThumbnailWidth:  0,      // Maximum width of thumbnails. This is ignored if zero. If not zero and thumbnailWidth is larger than maxThumbnailWidth, maxThumbnailWidth supersedes the thumbnailWidth.
-    	maxThumbnailHeight: 0,      // Maximum height of thumbnails. This is ignored if zero. If not zero and thumbnailHeight is larger than maxThumbnailHeight, maxThumbnailHeight supersedes the thumbnailHeight.
-    	slideDuration:      400,    // The number of milliseconds of each slide animation. Ignored if changeSlideEvery is zero.
-    	changeSlideEvery:   0       // Number of milliseconds until slide is automatically changed. If zero, slides aren't changed automatically.
+        maxHeight:          0,      // The maximum height of each image. If zero, the original image heights are used.
+        insertAfter:        false,  // Inserts slideshow after selected image (rather than inside) if true.
+        thumbnailWidth:     50,     // Width of thumbnails.
+        thumbnailHeight:    50,     // Height of thumbnails.
+        maxThumbnailWidth:  0,      // Maximum width of thumbnails. This is ignored if zero. If not zero and thumbnailWidth is larger than maxThumbnailWidth, maxThumbnailWidth supersedes the thumbnailWidth.
+        maxThumbnailHeight: 0,      // Maximum height of thumbnails. This is ignored if zero. If not zero and thumbnailHeight is larger than maxThumbnailHeight, maxThumbnailHeight supersedes the thumbnailHeight.
+        slideDuration:      400,    // The number of milliseconds of each slide animation. Ignored if changeSlideEvery is zero.
+        changeSlideEvery:   0       // Number of milliseconds until slide is automatically changed. If zero, slides aren't changed automatically.
     }
