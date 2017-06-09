@@ -261,6 +261,18 @@
 			}
 		});
 		
+		priv.resizeTimer = 0;
+		
+		$(window).resize(function() {
+			if (priv.resizeTimer)
+				clearTimeout(priv.resizeTimer);
+			
+			priv.resizeTimer = setTimeout(function() {
+				priv.resizeTimer = 0;
+				priv.select($('li', priv.fullSizeList).get(priv.highlightedIndex));
+			}, 500);
+		});
+		
 		priv.imagesLoaded = priv.images.length;
 		
 		for (var i = 0; i < priv.images.length; i++) {
