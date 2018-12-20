@@ -7,7 +7,7 @@
 
 !function(exports, $, undefined) {
     var LittleSlideshow = function(element, images, options) {
-		var priv = {}, pub = {};
+		const priv = {}, pub = {};
 		
 		priv.init = function(options) {
 			this.args = 
@@ -44,7 +44,7 @@
 				else
 					priv.highlightedIndex++;
 				
-				var nextElement = $('li', priv.fullSizeList).get(priv.highlightedIndex);
+				const nextElement = $('li', priv.fullSizeList).get(priv.highlightedIndex);
 				
 				priv.select(nextElement);
 			}, priv.args.changeSlideEvery);
@@ -55,12 +55,12 @@
 		}
 
 		priv.highlightedListIndex = function() {
-			var 
+			const 
 				fullsizeListItems = $('li', this.fullSizeList),
 				windowCenter = Math.floor(window.innerWidth / 2);
 			
-			for (var i = 0; i < fullsizeListItems.length; i++) {
-				var listItem = $(fullsizeListItems[i]);
+			for (let i = 0; i < fullsizeListItems.length; i++) {
+				const listItem = $(fullsizeListItems[i]);
 				
 				// Is img opacity 1?
 				if ($('img', listItem).css('opacity') == 1)
@@ -76,7 +76,7 @@
 		}
 
 		priv.addItem = function(attrs, index, onLoaded) {
-			var attrs = $.extend({
+			attrs = $.extend({
 				src: '',
 				width: '',
 				height: '',
@@ -87,13 +87,13 @@
 			if (attrs.src == '')
 				return true;
 			
-			var anchor =
+			const anchor =
 				$('<a>')
 					.attr('href', '#' + (index + 1))
 					.attr('title', attrs.anchorTitle);
 			
 			// Create full size and thumbnail img tag (but don't set src, yet)
-			var fullsizeImg = 
+			const fullsizeImg = 
 				$('<img>')
 					.attr('alt', attrs.alt);
 					
@@ -103,7 +103,7 @@
 			if (attrs.height > 0)
 				fullsizeImg.attr('height', attrs.height);
 					
-			var thumbImg = 
+			const thumbImg = 
 				$('<img>')
 					.attr({
 						"src": attrs.src,
@@ -116,7 +116,7 @@
 			if (this.args.thumbnailHeight > 0)
 				thumbImg.attr('height', this.args.thumbnailHeight);
 					
-			var 
+			const 
 				fullsizeListItem = $('<li></li>').append(anchor.clone().append(fullsizeImg)),
 				thumbListItem = $('<li></li>').append(anchor.clone().append(thumbImg));
 				
@@ -192,7 +192,7 @@
 		}
 
 		priv.select = function(el) {
-			var 
+			const 
 				horizontalCenter = Math.floor(window.innerWidth / 2) - Math.floor($(el).innerWidth() / 2),
 				leftOffset = $(el).data('leftOffset') * -1;
 			
@@ -204,20 +204,17 @@
 		}
 
 		priv.highlight = function() {
-			var 
+			const 
 				windowCenter = Math.floor(window.innerWidth / 2);
 			
 			$('li', this.fullSizeList).each(function() {
-				var 
-					opacity = 0.25,
+				const 
 					elLeftOffset = $(this).offset().left, 
 					elWidth = $(this).innerWidth(),
 					elAnchor = $('a', this);
 				
-				if (windowCenter >= elLeftOffset && windowCenter <= elLeftOffset + elWidth) {
-					// Element has center X position
-					opacity = 1;
-				}
+				// Check if element has center X position
+				const opacity = (windowCenter >= elLeftOffset && windowCenter <= elLeftOffset + elWidth) ? 1 : 0.25;
 				
 				// Otherwise, element doesn't have center X position or is outside window
 				
@@ -235,16 +232,16 @@
 		
 		priv.element = (element instanceof $) ? element : $(element);
 		
-		var insertEl = (!priv.args.insertAfter) ? $(priv.element).append(priv.container) : $(priv.element).after(priv.container);
+		const insertEl = (!priv.args.insertAfter) ? $(priv.element).append(priv.container) : $(priv.element).after(priv.container);
 		
 		$(document).on('slideshowImagesLoaded', function(e) {
 			// Calculate offsets once all images are loaded.
-			var listItems = $('li', priv.fullSizeList);
+			const listItems = $('li', priv.fullSizeList);
 			
 			priv.currentOffset = 0;
 			
-			for (var i = 0; i < listItems.length; i++) {
-				var listItem = $(listItems[i]);
+			for (let i = 0; i < listItems.length; i++) {
+				const listItem = $(listItems[i]);
 				
 				listItem.data('leftOffset', priv.currentOffset);
 				
@@ -275,7 +272,7 @@
 		
 		priv.imagesLoaded = priv.images.length;
 		
-		for (var i = 0; i < priv.images.length; i++) {
+		for (let i = 0; i < priv.images.length; i++) {
 			priv.addItem(priv.images[i], i);
 		}
 		
