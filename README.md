@@ -42,40 +42,46 @@ Little Slideshow is licensed under the MIT License.
    1. Download the source code from GitHub.
    2. Add the following HTML tags inside the ``<head>`` tag.
 
-          <script type="text/javascript" src="path/to/littleslideshow/littleslideshow.min.js"></script>
-          <link rel="stylesheet" type="text/css" href="path/to/littleslideshow/littleslideshow.min.css">
+```html
+<script type="text/javascript" src="path/to/littleslideshow/littleslideshow.min.js"></script>
+<link rel="stylesheet" type="text/css" href="path/to/littleslideshow/littleslideshow.min.css">
+```
           
-    3. Insert the HTML tag inside the ``<body>`` tag that will be used to contain the slideshow.
+   3. Insert the HTML tag inside the ``<body>`` tag that will be used to contain the slideshow.
 
-           <div id="littleslideshow"></div>
+```html
+<div id="littleslideshow"></div>
+```
            
-    4. Call the ``.LittleSlideshow`` method
+   4. Call the ``.LittleSlideshow`` method
     
-           <script type="text/javascript">
-              jQuery(document).ready(function($) {
-                  var images =
-                      [
-                          {
-                              src: 'path/to/image1.jpg'
-                          },
-                          {
-                              src: 'path/to/image2.jpg'
-                          },
-                          {
-                              src: 'path/to/image3.jpg'
-                          },
-                          {
-                              src: 'path/to/image4.jpg'
-                          },
-                          {
-                              src: 'path/to/image5.jpg'
-                          },
-                      ];
-                  var options = {};
-                  
-                  $('#littleslideshow').LittleSlideshow(images, options);
-              });
-           </script>
+```html
+<script type="text/javascript">
+  jQuery(document).ready(function($) {
+      const images =
+          [
+              {
+                  src: 'path/to/image1.jpg'
+              },
+              {
+                  src: 'path/to/image2.jpg'
+              },
+              {
+                  src: 'path/to/image3.jpg'
+              },
+              {
+                  src: 'path/to/image4.jpg'
+              },
+              {
+                  src: 'path/to/image5.jpg'
+              },
+          ];
+      const options = {};
+
+      $('#littleslideshow').LittleSlideshow(images, options);
+  });
+</script>
+ ```
            
 ## Parameters ##
 ## Images ##
