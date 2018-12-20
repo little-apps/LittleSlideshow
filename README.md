@@ -87,27 +87,32 @@ Little Slideshow is licensed under the MIT License.
 ## Images ##
 This parameter is an array of objects, with each object having the following properties:
 
-    [
-        {
-            src:            '',     // The source of the image (required)
-            width:          '',     // Width of image (set as the 'width' attribute of <img>)
-            height:         '',     // Height of image (set as the 'height' attribute of <img>)
-            alt:            '',     // Image alternative text (set as the 'alt' attribute of <img>)
-            anchorTitle:    ''      // Title of link (set as the 'title' attribute of <a>)
-        },
-        // ...
-    ]
+```javascript
+[
+    {
+        src:            '',     // The source of the image (required)
+        width:          '',     // Width of image (set as the 'width' attribute of <img>)
+        height:         '',     // Height of image (set as the 'height' attribute of <img>)
+        alt:            '',     // Image alternative text (set as the 'alt' attribute of <img>)
+        anchorTitle:    ''      // Title of link (set as the 'title' attribute of <a>)
+    },
+    // ...
+]
+```
+
 ## Options ##
 Options are a JSON object with the following properties:
 
-    {
-        maxWidth:           0,      // The maximum width of each image. If zero, the original image widths are used.
-        maxHeight:          0,      // The maximum height of each image. If zero, the original image heights are used.
-        insertAfter:        false,  // Inserts slideshow after selected image (rather than inside) if true.
-        thumbnailWidth:     50,     // Width of thumbnails.
-        thumbnailHeight:    50,     // Height of thumbnails.
-        maxThumbnailWidth:  0,      // Maximum width of thumbnails. This is ignored if zero. If not zero and thumbnailWidth is larger than maxThumbnailWidth, maxThumbnailWidth supersedes the thumbnailWidth.
-        maxThumbnailHeight: 0,      // Maximum height of thumbnails. This is ignored if zero. If not zero and thumbnailHeight is larger than maxThumbnailHeight, maxThumbnailHeight supersedes the thumbnailHeight.
-        slideDuration:      400,    // The number of milliseconds of each slide animation. Ignored if changeSlideEvery is zero.
-        changeSlideEvery:   0       // Number of milliseconds until slide is automatically changed. If zero, slides aren't changed automatically.
-    }
+```javascript
+{
+    maxWidth:           0,      // The maximum width of each image. If zero, the original image widths are used.
+    maxHeight:          0,      // The maximum height of each image. If zero, the original image heights are used.
+    insertAfter:        false,  // Inserts slideshow after selected image (rather than inside) if true.
+    thumbnailWidth:     50,     // Width of thumbnails.
+    thumbnailHeight:    50,     // Height of thumbnails.
+    maxThumbnailWidth:  0,      // Maximum width of thumbnails. This is ignored if zero. If not zero and thumbnailWidth is larger than maxThumbnailWidth, maxThumbnailWidth supersedes the thumbnailWidth.
+    maxThumbnailHeight: 0,      // Maximum height of thumbnails. This is ignored if zero. If not zero and thumbnailHeight is larger than maxThumbnailHeight, maxThumbnailHeight supersedes the thumbnailHeight.
+    slideDuration:      400,    // The number of milliseconds of each slide animation. Ignored if changeSlideEvery is zero.
+    changeSlideEvery:   0       // Number of milliseconds until slide is automatically changed. If zero, slides aren't changed automatically.
+}
+```
