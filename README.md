@@ -1,5 +1,5 @@
 # Little Slideshow
-Little Slideshow is a simple slideshow developed in jQuery and works with Bootstrap.
+Little Slideshow is a simple slideshow developed in jQuery and works with Bootstrap v3.
 
 ![LittleSlideshow Screenshot](http://i.imgur.com/ROXq28X.png)
 
