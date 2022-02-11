@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "npm run development",
     "prod": "npm run production",
-    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --config webpack.config.js",
-    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --config webpack.config.js"
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --config webpack.config.js",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --config webpack.config.js"
   },
   "repository": {
     "type": "git",
