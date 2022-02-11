@@ -21,13 +21,6 @@ module.exports = {
 					"css-loader", // translates CSS into CommonJS
 					"sass-loader" // compiles Sass to CSS, using Node Sass by default
 				]
-			},
-			{
-				test: /\.js$/,
-				loader: 'babel-loader',
-				query: {
-					presets: ['env']
-				}
 			}
 		]
 	},
